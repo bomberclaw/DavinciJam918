@@ -23,7 +23,7 @@ public class GameScene : MonoBehaviour {
 
     public string[] introText;
 
-    private GameScene_SM currentState = GameScene_SM.INITIALIZING;
+    public GameScene_SM currentState = GameScene_SM.INITIALIZING;
 
     private int questionAsked = -1;
 
@@ -42,9 +42,6 @@ public class GameScene : MonoBehaviour {
     private int introTextIndex = 0;
     public GameObject nextButton;
 
-    private bool won = false;
-    private bool loss = false;
-
     void OnEnable()
     {
         GameManager.Instance.SceneChanged(sceneName);
@@ -53,6 +50,10 @@ public class GameScene : MonoBehaviour {
         answerCharacterIndex = 0;   
         partialAnswer.text = "";
         fullAnswer = "";
+
+
+
+
         if (GameManager.Instance.isIntro && introText.Length > 0)
         {
             fullAnswer = introText[0];
@@ -63,18 +64,12 @@ public class GameScene : MonoBehaviour {
         {
             currentState = GameScene_SM.INITIALIZING;
         }
+
     }
 
     // Use this for initialization
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (currentState == GameScene_SM.WRITING_ANSWER || currentState == GameScene_SM.ON_INTRO))
-        {
-            partialAnswer.text = fullAnswer;
-            answerCharacterIndex = fullAnswer.Length - 1;
-            t = 0;
-        }
-
         switch (currentState)
         {
             case GameScene_SM.INITIALIZING:
@@ -115,7 +110,9 @@ public class GameScene : MonoBehaviour {
                 {
                     t += Time.deltaTime * writeSpeed;
 
-                    if(t >= 1) { 
+                    if(t >= 1) {
+                        //ACA
+
                         partialAnswer.text += fullAnswer[answerCharacterIndex];
                         answerCharacterIndex++;
                         t -= 1;
@@ -123,7 +120,10 @@ public class GameScene : MonoBehaviour {
                 }
                 break;
             case GameScene_SM.ON_ANSWER_FINISH:
+                questionAsked = -1;
+                fullAnswer = "";
                 nextButton.SetActive(true);
+                //currentState = GameScene_SM.INITIALIZING;
                 break;
             case GameScene_SM.ON_INTRO:
                 if (partialAnswer.text.Length == fullAnswer.Length)
@@ -136,6 +136,8 @@ public class GameScene : MonoBehaviour {
 
                     if (t >= 1)
                     {
+                        //ACA
+
                         partialAnswer.text += fullAnswer[answerCharacterIndex];
                         answerCharacterIndex++;
                         t -= 1;
@@ -159,16 +161,6 @@ public class GameScene : MonoBehaviour {
 
         if (q.disableGoToMap)
             unableToGoBack = true;
-
-        if (q.wonTheGame) { 
-            won = true;
-            unableToGoBack = false;
-        }
-
-        if (q.lossTheGame) { 
-            loss = true;
-            unableToGoBack = false;
-        }
 
         switch (q.itemToUnlock)
         {
@@ -318,14 +310,10 @@ public class GameScene : MonoBehaviour {
     {
         nextButton.SetActive(false);
 
-        questionAsked = -1;
-        fullAnswer = "";
-
-        if (GameManager.Instance.isIntro) { 
+        if(GameManager.Instance.isIntro) { 
             introTextIndex++;   
             if(introTextIndex >= introText.Length)
             {
-                introTextIndex = 0;
                 answerCharacterIndex = 0;
                 partialAnswer.text = "";
                 fullAnswer = "";
@@ -341,26 +329,10 @@ public class GameScene : MonoBehaviour {
         }
         else
         {
-            if (won)
-            {
-                won = false;
-                partialAnswer.text = "";
-                GameManager.Instance.GoToWonScreen();
-            }
-            else if (loss)
-            {
-                loss = false;
-                partialAnswer.text = "";
-                GameManager.Instance.GoToLossScreen();
-            }
-            else
-            {
-                partialAnswer.text = "";
-                currentState = GameScene_SM.INITIALIZING;
-            }
+            partialAnswer.text = "";
+            currentState = GameScene_SM.INITIALIZING;
         }
 
     }
-
 
 }
