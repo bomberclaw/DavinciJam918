@@ -209,7 +209,7 @@ public class GameManager : Singleton<GameManager> {
 
             for (int i = 0; i < q.requiredQuestionIds.Length; i++)
             {
-                if (!questionsAsked.Contains(q.requiredQuestionIds[i]))
+                if (questionsAsked.Contains(q.requiredQuestionIds[i]))
                     founded = true;
             }
 
