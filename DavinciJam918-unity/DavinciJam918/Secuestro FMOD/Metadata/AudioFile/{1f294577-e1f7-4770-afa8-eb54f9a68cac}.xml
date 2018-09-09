@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{1f294577-e1f7-4770-afa8-eb54f9a68cac}">
+        <property name="assetPath">
+            <value>Market -discarded-.ogg</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>24</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{6b75192b-fbaf-4321-8e76-e907630220d5}</destination>
+        </relationship>
+    </object>
+</objects>
