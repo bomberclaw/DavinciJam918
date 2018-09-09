@@ -46,6 +46,28 @@ public class GameManager : Singleton<GameManager> {
     [HideInInspector]
     public bool isIntro = true;
 
+
+    private FMOD.Studio.EventInstance music;
+    private FMOD.Studio.ParameterInstance whichMusic;
+
+    private int musicState = 99;
+
+    private FMOD.Studio.PLAYBACK_STATE eventStateChecker;
+
+    private void Start()
+    {
+        music.getPlaybackState(out eventStateChecker);
+        if (eventStateChecker != FMOD.Studio.PLAYBACK_STATE.PLAYING && musicState != 0)
+        {
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+            music.getParameter("Music Type", out whichMusic);
+            whichMusic.setValue(0f);
+            musicState = 0;
+            music.start();
+        }
+    }
+
+
     public void StartGameCicle()
     {
         if(gameScenes.Length > 0)
@@ -234,33 +256,83 @@ public class GameManager : Singleton<GameManager> {
         switch (newScene)
         {
             case GameScenes.HOUSE:
+                if (musicState != 0)
+                {
+                    musicState = 0;
+                    whichMusic.setValue(0f);
+                }
                 Debug.Log("You are in your House");
                 break;
             case GameScenes.MARKET:
+                if (musicState != 1)
+                {
+                    musicState = 1;
+                    whichMusic.setValue(1f);
+                }
                 Debug.Log("You are in the Market");
                 break;
             case GameScenes.POLICE_DEPARTMENT:
+                if (musicState != 2)
+                {
+                    musicState = 2;
+                    whichMusic.setValue(2f);
+                }
                 Debug.Log("You are in the Police Department");
                 break;
             case GameScenes.BUILDINGS:
+                if (musicState != 3)
+                {
+                    musicState = 3;
+                    whichMusic.setValue(3f);
+                }
                 Debug.Log("You are in the Buildings Complex");
                 break;
             case GameScenes.HOSPITAL_MORGUE:
+                if (musicState != 4)
+                {
+                    musicState = 4;
+                    whichMusic.setValue(4f);
+                }
                 Debug.Log("You are in the Hospital");
                 break;
             case GameScenes.CORPORATION:
+                if (musicState != 5)
+                {
+                    musicState = 5;
+                    whichMusic.setValue(5f);
+                }
                 Debug.Log("You are in the Corporation");
                 break;
             case GameScenes.MAP:
+                if (musicState != 0)
+                {
+                    musicState = 0;
+                    whichMusic.setValue(0f);
+                }
                 Debug.Log("You are in the Map");
                 break;
             case GameScenes.MENU:
+                if (musicState != 0)
+                {
+                    musicState = 0;
+                    whichMusic.setValue(0f);
+                }
                 Debug.Log("You are in the Menu");
                 break;
             case GameScenes.WON:
+                if (musicState != 0)
+                {
+                    musicState = 0;
+                    whichMusic.setValue(0f);
+                }
                 Debug.Log("You Won");
                 break;
             case GameScenes.LOSS:
+                if (musicState != 0)
+                {
+                    musicState = 0;
+                    whichMusic.setValue(0f);
+                }
                 Debug.Log("You Loss");
                 break;
         }
