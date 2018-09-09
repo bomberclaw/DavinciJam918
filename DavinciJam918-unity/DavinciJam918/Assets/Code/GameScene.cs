@@ -50,6 +50,10 @@ public class GameScene : MonoBehaviour {
         answerCharacterIndex = 0;   
         partialAnswer.text = "";
         fullAnswer = "";
+
+
+
+
         if (GameManager.Instance.isIntro && introText.Length > 0)
         {
             fullAnswer = introText[0];
@@ -60,6 +64,7 @@ public class GameScene : MonoBehaviour {
         {
             currentState = GameScene_SM.INITIALIZING;
         }
+
     }
 
     // Use this for initialization
