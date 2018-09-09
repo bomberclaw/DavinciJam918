@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavinciJam918", "DavinciJam918.csproj", "{A6A7B27E-8EC6-E99D-4444-8C014EAE8C6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavinciJam918.Plugins", "DavinciJam918.Plugins.csproj", "{524AAE30-868B-CD63-6F4D-4F6D86D21C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavinciJam918.Editor.Plugins", "DavinciJam918.Editor.Plugins.csproj", "{2A55CD14-E617-9AB2-5E69-D7789FC5B207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavinciJam918.Editor", "DavinciJam918.Editor.csproj", "{67FB2AE5-B206-09DE-E195-92D998FC6A59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +19,18 @@ Global
 		{A6A7B27E-8EC6-E99D-4444-8C014EAE8C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6A7B27E-8EC6-E99D-4444-8C014EAE8C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6A7B27E-8EC6-E99D-4444-8C014EAE8C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524AAE30-868B-CD63-6F4D-4F6D86D21C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524AAE30-868B-CD63-6F4D-4F6D86D21C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524AAE30-868B-CD63-6F4D-4F6D86D21C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524AAE30-868B-CD63-6F4D-4F6D86D21C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A55CD14-E617-9AB2-5E69-D7789FC5B207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A55CD14-E617-9AB2-5E69-D7789FC5B207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A55CD14-E617-9AB2-5E69-D7789FC5B207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A55CD14-E617-9AB2-5E69-D7789FC5B207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67FB2AE5-B206-09DE-E195-92D998FC6A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FB2AE5-B206-09DE-E195-92D998FC6A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FB2AE5-B206-09DE-E195-92D998FC6A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FB2AE5-B206-09DE-E195-92D998FC6A59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
