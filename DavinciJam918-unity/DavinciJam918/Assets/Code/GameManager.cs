@@ -7,6 +7,8 @@ public class GameManager : Singleton<GameManager> {
     public GameObject[] gameScenes;
 
     public GameObject mainMenu;
+    public GameObject gameLoss;
+    public GameObject gameWon;
 
     public GameObject goToMapButton;
 
@@ -52,13 +54,37 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
-    void ReturnToMainMenu()
+    public void ReturnToMainMenu()
     {
         for (int i = 0; i < gameScenes.Length; i++)
         {
             gameScenes[i].SetActive(false);
         }
 
+        hasItemOne = false;
+        hasItemTwo = false;
+        hasItemThree = false;
+        hasItemFour = false;
+        hasItemFive = false;
+        hasItemSix = false;
+        hasItemSeven = false;
+
+        isHouseEnabled = true;
+        isMarketEnabled = true;
+        isPoliceDepartmentEnabled = true;
+        isBuildingsEnabled = false;
+        isHospitalMorgueEnabled = false;
+        isCorporationEnabled = false;
+
+        questionsAsked.Clear();
+        questionsDisabled.Clear();
+
+        isIntro = true;
+
+        mainMenu.GetComponent<CanvasGroup>().alpha = 1;
+
+        gameLoss.SetActive(false);
+        gameWon.SetActive(false);
         mainMenu.SetActive(true);
 
         SceneChanged(GameScenes.MENU);
@@ -75,6 +101,38 @@ public class GameManager : Singleton<GameManager> {
         gameScenes[0].SetActive(true);
 
         SceneChanged(GameScenes.MAP);
+    }
+
+    public void GoToWonScreen()
+    {
+        EnableGoToMapButton(false);
+
+        for (int i = 0; i < gameScenes.Length; i++)
+        {
+            gameScenes[i].SetActive(false);
+        }
+
+        gameLoss.SetActive(false);
+        mainMenu.SetActive(false);
+        gameWon.SetActive(true);
+
+        SceneChanged(GameScenes.WON);
+    }
+
+    public void GoToLossScreen()
+    {
+        EnableGoToMapButton(false);
+
+        for (int i = 0; i < gameScenes.Length; i++)
+        {
+            gameScenes[i].SetActive(false);
+        }
+
+        mainMenu.SetActive(false);
+        gameWon.SetActive(false);
+        gameLoss.SetActive(true);
+
+        SceneChanged(GameScenes.LOSS);
     }
 
     public void EnableGoToMapButton(bool state)
@@ -147,11 +205,16 @@ public class GameManager : Singleton<GameManager> {
 
         if (q.requiredQuestionIds.Length > 0)
         {
+            bool founded = false;
+
             for (int i = 0; i < q.requiredQuestionIds.Length; i++)
             {
                 if (!questionsAsked.Contains(q.requiredQuestionIds[i]))
-                    return false;
+                    founded = true;
             }
+
+            if (!founded)
+                return false;
         }
 
         if (questionsDisabled.Count > 0)
@@ -193,6 +256,12 @@ public class GameManager : Singleton<GameManager> {
                 break;
             case GameScenes.MENU:
                 Debug.Log("You are in the Menu");
+                break;
+            case GameScenes.WON:
+                Debug.Log("You Won");
+                break;
+            case GameScenes.LOSS:
+                Debug.Log("You Loss");
                 break;
         }
     }
