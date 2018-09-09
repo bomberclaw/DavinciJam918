@@ -9,7 +9,9 @@ public enum GameScenes
     POLICE_DEPARTMENT,
     BUILDINGS,
     HOSPITAL_MORGUE,
-    CORPORATION
+    CORPORATION,
+    MAP,
+    MENU
 }
 
 public class Map : MonoBehaviour {

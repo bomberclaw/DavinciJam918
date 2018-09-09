@@ -31,6 +31,9 @@ public class Question {
 
     public Items itemToUnlock;
 
+    public float cameraShakeAmount = 0;
+    public float cameraShakeDuration = 0;
+
     public bool disableGoToMap;
 
 }

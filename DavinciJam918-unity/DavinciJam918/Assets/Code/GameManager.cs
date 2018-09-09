@@ -26,11 +26,11 @@ public class GameManager : Singleton<GameManager> {
     public bool hasItemSeven = false;
 
     [HideInInspector]
-    public bool isHouseEnabled = false;
+    public bool isHouseEnabled = true;
     [HideInInspector]
-    public bool isMarketEnabled = false;
+    public bool isMarketEnabled = true;
     [HideInInspector]
-    public bool isPoliceDepartmentEnabled = false;
+    public bool isPoliceDepartmentEnabled = true;
     [HideInInspector]
     public bool isBuildingsEnabled = false;
     [HideInInspector]
@@ -39,9 +39,10 @@ public class GameManager : Singleton<GameManager> {
     public bool isCorporationEnabled = false;
 
     private List<int> questionsAsked = new List<int>();
+    private List<int> questionsDisabled = new List<int>();
 
     [HideInInspector]
-    public bool firstSceneException = true;
+    public bool isIntro = true;
 
     public void StartGameCicle()
     {
@@ -59,6 +60,8 @@ public class GameManager : Singleton<GameManager> {
         }
 
         mainMenu.SetActive(true);
+
+        SceneChanged(GameScenes.MENU);
     }
 
     public void ReturnToMap()
@@ -70,6 +73,8 @@ public class GameManager : Singleton<GameManager> {
             gameScenes[i].SetActive(false);
         }
         gameScenes[0].SetActive(true);
+
+        SceneChanged(GameScenes.MAP);
     }
 
     public void EnableGoToMapButton(bool state)
@@ -81,6 +86,12 @@ public class GameManager : Singleton<GameManager> {
     {
         if(!questionsAsked.Contains(questionId))
             questionsAsked.Add(questionId);
+    }
+
+    public void AddDisabledQuestion(int questionId)
+    {
+        if (!questionsDisabled.Contains(questionId))
+            questionsDisabled.Add(questionId);
     }
 
     public List<int> GetAnsweredQuestion()
@@ -143,15 +154,47 @@ public class GameManager : Singleton<GameManager> {
             }
         }
 
-        if (q.disableQuestionIds.Length > 0)
+        if (questionsDisabled.Count > 0)
         {
-            for (int i = 0; i < q.disableQuestionIds.Length; i++)
+            for (int i = 0; i < questionsDisabled.Count; i++)
             {
-                AddAnsweredQuestion(q.disableQuestionIds[i]);
+                if (questionsDisabled.Contains(q.id))
+                    return false;
             }
         }
 
         return true;
+    }
+
+    public void SceneChanged(GameScenes newScene)
+    {
+        switch (newScene)
+        {
+            case GameScenes.HOUSE:
+                Debug.Log("You are in your House");
+                break;
+            case GameScenes.MARKET:
+                Debug.Log("You are in the Market");
+                break;
+            case GameScenes.POLICE_DEPARTMENT:
+                Debug.Log("You are in the Police Department");
+                break;
+            case GameScenes.BUILDINGS:
+                Debug.Log("You are in the Buildings Complex");
+                break;
+            case GameScenes.HOSPITAL_MORGUE:
+                Debug.Log("You are in the Hospital");
+                break;
+            case GameScenes.CORPORATION:
+                Debug.Log("You are in the Corporation");
+                break;
+            case GameScenes.MAP:
+                Debug.Log("You are in the Map");
+                break;
+            case GameScenes.MENU:
+                Debug.Log("You are in the Menu");
+                break;
+        }
     }
 
 }

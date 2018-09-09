@@ -8,16 +8,20 @@ public enum GameScene_SM
     INITIALIZING,
     WAITING_FOR_QUESTION,
     WRITING_ANSWER,
-    ON_ANSWER_FINISH
+    ON_ANSWER_FINISH,
+    ON_INTRO
 }
 
 public class GameScene : MonoBehaviour {
 
+    public GameScenes sceneName;
     public GameObject goToMapButton;
     public GameObject[] questionButtons;
     public GameObject dialogBox;
 
     public Question[] questions;
+
+    public string[] introText;
 
     public GameScene_SM currentState = GameScene_SM.INITIALIZING;
 
@@ -35,14 +39,27 @@ public class GameScene : MonoBehaviour {
 
     private bool unableToGoBack = false;
 
+    private int introTextIndex = 0;
+    public GameObject nextButton;
+
     void OnEnable()
     {
+        GameManager.Instance.SceneChanged(sceneName);
         ResetButtons();
         questionAsked = -1;
-        answerCharacterIndex = 0;
+        answerCharacterIndex = 0;   
         partialAnswer.text = "";
         fullAnswer = "";
-        currentState = GameScene_SM.INITIALIZING;
+        if (GameManager.Instance.isIntro && introText.Length > 0)
+        {
+            fullAnswer = introText[0];
+            dialogBox.SetActive(true);
+            currentState = GameScene_SM.ON_INTRO;
+        }
+        else
+        {
+            currentState = GameScene_SM.INITIALIZING;
+        }
     }
 
     // Use this for initialization
@@ -57,11 +74,11 @@ public class GameScene : MonoBehaviour {
                 if(partialAnswer.text == "")
                     dialogBox.SetActive(false);
 
-                if (!unableToGoBack && !GameManager.Instance.firstSceneException)
+                if (!unableToGoBack && !GameManager.Instance.isIntro)
                     EnableGoToMapButton(true);
                 else
                 {
-                    GameManager.Instance.firstSceneException = false;
+                    GameManager.Instance.isIntro = false;
                     unableToGoBack = false;
                 }
 
@@ -96,13 +113,27 @@ public class GameScene : MonoBehaviour {
                 }
                 break;
             case GameScene_SM.ON_ANSWER_FINISH:
-                //if (!unableToGoBack)
-                //    EnableGoToMapButton(true);
-                //else
-                //    unableToGoBack = false;
                 questionAsked = -1;
                 fullAnswer = "";
-                currentState = GameScene_SM.INITIALIZING;
+                nextButton.SetActive(true);
+                //currentState = GameScene_SM.INITIALIZING;
+                break;
+            case GameScene_SM.ON_INTRO:
+                if (partialAnswer.text.Length == fullAnswer.Length)
+                {
+                    nextButton.SetActive(true);
+                }
+                else
+                {
+                    t += Time.deltaTime * writeSpeed;
+
+                    if (t >= 1)
+                    {
+                        partialAnswer.text += fullAnswer[answerCharacterIndex];
+                        answerCharacterIndex++;
+                        t -= 1;
+                    }
+                }
                 break;
         }
     }
@@ -207,7 +238,17 @@ public class GameScene : MonoBehaviour {
             }
         }
 
+        if (q.disableQuestionIds.Length > 0)
+        {
+            for (int i = 0; i < q.disableQuestionIds.Length; i++)
+            {
+                GameManager.Instance.AddDisabledQuestion(q.disableQuestionIds[i]);
+            }
+        }
+
         GameManager.Instance.AddAnsweredQuestion(q.id);
+        CameraShake.Instance.shakeDuration = q.cameraShakeDuration;
+        CameraShake.Instance.shakeAmount = q.cameraShakeAmount;
     }
 
     private void LoadButtons()
@@ -254,6 +295,35 @@ public class GameScene : MonoBehaviour {
             questionButtons[i].GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             questionButtons[i].GetComponentInChildren<Text>().text = "";
         }
+    }
+
+    public void Next()
+    {
+        nextButton.SetActive(false);
+
+        if(GameManager.Instance.isIntro) { 
+            introTextIndex++;   
+            if(introTextIndex >= introText.Length)
+            {
+                answerCharacterIndex = 0;
+                partialAnswer.text = "";
+                fullAnswer = "";
+                GameManager.Instance.isIntro = false;
+                GameManager.Instance.ReturnToMap();
+            }
+            else
+            {
+                answerCharacterIndex = 0;
+                partialAnswer.text = "";
+                fullAnswer = introText[introTextIndex];
+            }
+        }
+        else
+        {
+            partialAnswer.text = "";
+            currentState = GameScene_SM.INITIALIZING;
+        }
+
     }
 
 }
