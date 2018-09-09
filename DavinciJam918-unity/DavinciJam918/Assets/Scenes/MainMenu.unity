@@ -143,10 +143,10 @@ RectTransform:
   m_Father: {fileID: 1154442885}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 192, y: -69.25171}
+  m_SizeDelta: {x: 384, y: 138.50342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14429094
 MonoBehaviour:
@@ -1045,7 +1045,217 @@ MonoBehaviour:
   - {fileID: 578830583}
   - {fileID: 1790745204}
   dialogBox: {fileID: 575251808}
-  questions: []
+  questions:
+  - id: 20
+    questionText: "\xBFDoctora Drago?, Soy el Detective Gonzalo Oliveri si me permite
+      un segundo de su Ti-..."
+    answerText: "\xBFOtro cad\xE1ver? D\xE9jelo en la camilla, llene las formas y
+      reporte a su superior\u2026"
+    requiredItem: 
+    requiredQuestionIds: 13000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 21
+    questionText: "\u2026"
+    answerText: "Disculpe \xBFEs lento o el cad\xE1ver es usted? No tengo tiempo para
+      tratar con cadetes\u2026"
+    requiredItem: 
+    requiredQuestionIds: 14000000
+    disableQuestionIds: 16000000
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 22
+    questionText: "Handy me env\xEDa."
+    answerText: "\u2026 Oh\u2026 No sabia que Handy ten\xEDa tan buenos contactos\u2026.
+      Detective Oliveri \xBFVerdad?"
+    requiredItem: 
+    requiredQuestionIds: 14000000
+    disableQuestionIds: 15000000
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 23
+    questionText: "(Rie)... Cadete, hac\xEDa tiempo que no escuchaba eso\u2026"
+    answerText: Si piensa que esto es el club de comedia le recomiendo que salga de
+      estas instalac...
+    requiredItem: 
+    requiredQuestionIds: 15000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 24
+    questionText: "Si, y estoy aca para hablar un poco de su Proveedor\u2026 Biolash."
+    answerText: "\u2026"
+    requiredItem: 
+    requiredQuestionIds: 17000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 25
+    questionText: "Parece que somos dos cad\xE1veres hablando, o realmente la sorprendi\u2026"
+    answerText: "No, al contrario \xBFQu\xE9 es lo que quiere saber?"
+    requiredItem: 
+    requiredQuestionIds: 18000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 26
+    questionText: "Entonces\u2026 \xBFBiolash?"
+    answerText: "\xBFQu\xE9 pasa con Biolash? tiene que ser mas especifico Detective\u2026"
+    requiredItem: 
+    requiredQuestionIds: 19000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 27
+    questionText: "Increible lo que uno puede encontrar en el mercado estos d\xEDas\u2026"
+    answerText: "Si va a arrestarme, quiero a mi abogado en este instante\u2026"
+    requiredItem: 
+    requiredQuestionIds: 1a000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 28
+    questionText: "Tranquila, solo estamos charlando\u2026 Por ahora. Pero cu\xE9nteme
+      de sus superiores, por que utilizar\xEDan a una Doctora como usted para suplir
+      una tienda tan sucia como la de Handy\u2026"
+    answerText: "Ah, mis superiores, sinceramente desconozco sus objetivos, solo soy
+      un eslab\xF3n m\xE1s en esta ciudad corrupta\u2026"
+    requiredItem: 
+    requiredQuestionIds: 1b000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 29
+    questionText: Continue.
+    answerText: "Solo puedo decirle que Kast es un bastardo, siempre nos mantiene
+      al filo con los suministros, y donde puede recortar para ganar dinero, lo hace\u2026"
+    requiredItem: 
+    requiredQuestionIds: 1c000000
+    disableQuestionIds: 1e000000
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 30
+    questionText: Perfecto, entonces su superior seria...?
+    answerText: "No se a que se refiere Detective, solo puedo comentarle que el Director
+      de la Junta suele encargarse de seleccionar los suministros de las partes \u201Cusadas\u201D..."
+    requiredItem: 
+    requiredQuestionIds: 1c000000
+    disableQuestionIds: 1d000000
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 31
+    questionText: "... \xBFKast? \xBFAlejandro Kast?..."
+    answerText: "Un cerdo si me pregunta a mi\u2026 Pero bueno, no podr\xEDa decirle
+      qui\xE9n es mi superior sinceramente\u2026"
+    requiredItem: 
+    requiredQuestionIds: 1d0000001e000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 32
+    questionText: "Entiendo perfectamente Doctora, disc\xFAlpeme por insistir\u2026"
+    answerText: "No es problema alguno, Detective\u2026 Solo sepa comprender cuando
+      alguien coopera..."
+    requiredItem: 
+    requiredQuestionIds: 1f000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
+  - id: 33
+    questionText: "Si, pierda cuidado\u2026 Se comprender perfectamente. Por cierto,
+      es un hermoso reloj el que tiene en su mu\xF1eca. No sabia que ser Directora
+      de la Morgue ser\xEDa tan rentable..."
+    answerText: "Si terminamos, Detective\u2026 Estoy ocupada\u2026"
+    requiredItem: 
+    requiredQuestionIds: 20000000
+    disableQuestionIds: 
+    enableScenes: 
+    disableScenes: 
+    itemToUnlock: 0
+    cameraShakeAmount: 0
+    cameraShakeDuration: 0
+    wonTheGame: 0
+    lossTheGame: 0
+    disableGoToMap: 0
   introText: []
   partialAnswer: {fileID: 49203764}
   writeSpeed: 25
@@ -1647,7 +1857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &273959322
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2743,10 +2953,10 @@ RectTransform:
   m_Father: {fileID: 1154442885}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 192, y: -209.75513}
+  m_SizeDelta: {x: 384, y: 138.50342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427751244
 MonoBehaviour:
@@ -3112,7 +3322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &494609371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4156,7 +4366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9036511, g: 0.9705882, b: 0.4852941, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4176,7 +4386,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.85
-  m_Text: Titulo
+  m_Text: Legado
 --- !u!222 &711265779
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4201,7 +4411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &758345083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4219,7 +4429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35, y: 0.38622645}
   m_AnchorMax: {x: 0.656, y: 0.611}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 134}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &758345084
@@ -4247,7 +4457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5588,10 +5798,10 @@ RectTransform:
   m_Father: {fileID: 946798461}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3452917, y: 0.47700003}
-  m_AnchorMax: {x: 0.411, y: 0.5824074}
-  m_AnchoredPosition: {x: 2.5, y: -1}
-  m_SizeDelta: {x: 9, y: -6}
+  m_AnchorMin: {x: 0.3547926, y: 0.5986113}
+  m_AnchorMax: {x: 0.425, y: 0.6837501}
+  m_AnchoredPosition: {x: -1.560854, y: -4.461068}
+  m_SizeDelta: {x: 0.3617134, y: 16.025331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1027574787
 MonoBehaviour:
@@ -6793,8 +7003,6 @@ GameObject:
   - component: {fileID: 1295827962}
   - component: {fileID: 1295827961}
   - component: {fileID: 1295827960}
-  - component: {fileID: 1295827959}
-  - component: {fileID: 1295827958}
   - component: {fileID: 1295827957}
   m_Layer: 5
   m_Name: UI
@@ -6819,104 +7027,6 @@ MonoBehaviour:
   optionsTint: {fileID: 0}
   menuPanel: {fileID: 273959321}
   pausePanel: {fileID: 0}
---- !u!114 &1295827958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11423466, guid: 45616935e4fe10f48b62da1347801a16,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295827956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6575c13371fd4cbcba0652f2092d1c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titleMusic: {fileID: 8300000, guid: 7db0c87ec4fdb0e48af04349c4f14df9, type: 3}
-  mainMusic: {fileID: 8300000, guid: 7db0c87ec4fdb0e48af04349c4f14df9, type: 3}
-  volumeDown: {fileID: 24519918, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
-  volumeUp: {fileID: 24500003, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
---- !u!82 &1295827959
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8286744, guid: 45616935e4fe10f48b62da1347801a16,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295827956}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24324684, guid: 0ac7fb39e445048d89688f69c2a1839a,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7db0c87ec4fdb0e48af04349c4f14df9, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1295827960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7111,10 +7221,10 @@ RectTransform:
   m_Father: {fileID: 946798461}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7553125, y: 0.354}
-  m_AnchorMax: {x: 0.82783335, y: 0.45840746}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.84462076, y: 0.08713078}
+  m_AnchorMax: {x: 0.925, y: 0.19153826}
+  m_AnchoredPosition: {x: 7.712799, y: 7.3335776}
+  m_SizeDelta: {x: -15.182434, y: -0.12899876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298297274
 MonoBehaviour:
@@ -11451,14 +11561,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.77205884, g: 0.5109213, b: 0.5109213, a: 1}
+  m_Color: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9cbee39b2ab30e64d9e61108323b925c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f969b3da2f8fa8e4aa75e3997273bc33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
