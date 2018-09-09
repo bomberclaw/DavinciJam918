@@ -105,7 +105,9 @@ public class GameScene : MonoBehaviour {
                 {
                     t += Time.deltaTime * writeSpeed;
 
-                    if(t >= 1) { 
+                    if(t >= 1) {
+                        //ACA
+
                         partialAnswer.text += fullAnswer[answerCharacterIndex];
                         answerCharacterIndex++;
                         t -= 1;
@@ -129,6 +131,8 @@ public class GameScene : MonoBehaviour {
 
                     if (t >= 1)
                     {
+                        //ACA
+
                         partialAnswer.text += fullAnswer[answerCharacterIndex];
                         answerCharacterIndex++;
                         t -= 1;

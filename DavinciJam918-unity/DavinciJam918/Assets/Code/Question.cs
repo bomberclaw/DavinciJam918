@@ -34,6 +34,9 @@ public class Question {
     public float cameraShakeAmount = 0;
     public float cameraShakeDuration = 0;
 
+    public bool wonTheGame = false;
+    public bool lossTheGame = false;
+
     public bool disableGoToMap;
 
 }

@@ -11,11 +11,11 @@ public class AudioManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+        music.start();
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
 }
