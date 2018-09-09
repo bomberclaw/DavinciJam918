@@ -85,6 +85,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\AudioManager.cs" />
     <Compile Include="Assets\Code\CameraShake.cs" />
     <Compile Include="Assets\Code\GameManager.cs" />
     <Compile Include="Assets\Code\GameScene.cs" />
